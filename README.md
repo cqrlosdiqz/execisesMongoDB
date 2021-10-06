@@ -45,8 +45,8 @@
 
 9. Write a MongoDB query to find the restaurants that achieved a score, more than 80 but less than 100. 
 
-  ```js 
-    db.restaurants.find({"grades" : { $elemMatch:{"score":{$gt : 80 , $lt :100}}}});
+    ```js 
+    db.restaurants.find({"grades" : { $elemMatch:{"score":{$gt : 80 , $lt :100}}}})
     ```
 
 10. Write a MongoDB query to find the restaurants which locate in latitude value less than -95.754168.
