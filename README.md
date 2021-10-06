@@ -21,9 +21,9 @@
 
 4. Write a MongoDB query to display all the restaurant which is in the borough Bronx. 
 
-  ```js 
-  db.restaurants.find({"borough":"Bronx"})
-  ```
+    ```js 
+    db.restaurants.find({"borough":"Bronx"})
+    ```
 
 5. Write a MongoDB query to display the first 5 restaurant which is in the borough Bronx. 
 
