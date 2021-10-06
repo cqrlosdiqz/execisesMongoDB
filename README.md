@@ -27,18 +27,33 @@
 
 5. Write a MongoDB query to display the first 5 restaurant which is in the borough Bronx. 
 
+    ```js 
+    db.restaurants.find({"borough":"Bronx"}).limit(5)
+     ```
 
-7.Write a MongoDB query to display the next 5 restaurants after skipping first 5 which are in the borough Bronx. 
-
+7. Write a MongoDB query to display the next 5 restaurants after skipping first 5 which are in the borough Bronx. 
+    
+    ```js 
+    db.restaurants.find({"borough":"Bronx"}).skip(5).limit(5)
+     ```
 
 8. Write a MongoDB query to find the restaurants who achieved a score more than 90. 
 
+    ```js 
+    db.restaurants.find({"grades":{ $elemMatch: { "score": { $gt: 90} }}})
+    ```
 
 9. Write a MongoDB query to find the restaurants that achieved a score, more than 80 but less than 100. 
 
+  ```js 
+    db.restaurants.find({"grades" : { $elemMatch:{"score":{$gt : 80 , $lt :100}}}});
+    ```
 
 10. Write a MongoDB query to find the restaurants which locate in latitude value less than -95.754168.
 
+    ```js 
+    db.restaurants.find({"address.coord" : {$lt : -95.754168}});
+    ```
 
 11. Write a MongoDB query to find the restaurants that do not prepare any cuisine of 'American' and their grade score more than 70 and latitude less than -65.754168. 
 
