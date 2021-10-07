@@ -171,13 +171,14 @@ Note : Do this query without using $and operator.
 
     ```js
         db.restaurants.find(
-    {"borough" :{$nin :["Staten Island","Queens","Bronx","Brooklyn"]}},
-    {
-    "restaurant_id" : 1,
-    "name":1,"borough":1,
-    "cuisine" :1
-    }
-    );
+                        {"borough" :{$nin :["Staten Island","Queens","Bronx","Brooklyn"]}},
+                        {
+                        "restaurant_id" : 1,
+                        "name":1,"borough":1,
+                        "cuisine" :1
+                        }
+                    )
+    ```
 
 20. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which achieved a score which is not more than 10. 
 
