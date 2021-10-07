@@ -116,15 +116,56 @@ Note : Do this query without using $and operator.
 
 15. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which contain 'ces' as last three letters for its name. 
 
+    ```js
+    db.restaurants.find(
+                    {name: /ces$/},
+                        {
+                        "restaurant_id" : 1,
+                        "name":1,"borough":1,
+                        "cuisine" :1
+                        }
+                    )
+    ```
 
 16. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which contain 'Reg' as three letters somewhere in its name. 
 
+    ```js
+    db.restaurants.find(
+                    {"name": /.*Reg.*/},
+                                {
+                                "restaurant_id" : 1,
+                                "name":1,"borough":1,
+                                "cuisine" :1
+                                }
+                    )
+    ```
 
 17. Write a MongoDB query to find the restaurants which belong to the borough Bronx and prepared either American or Chinese dish. 
 
+    ```js
+    db.restaurants.find(
+                         { 
+                         "borough": "Bronx" , 
+                                $or: [
+                                        { "cuisine" : "American " },
+                                        { "cuisine" : "Chinese" }
+                                     ] 
+                        } 
+                     )
+    ```
 
 18. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which belong to the borough Staten Island or Queens or Bronxor Brooklyn. 
 
+    ```js
+    db.restaurants.find(
+                        {"borough" :{$in :["Staten Island","Queens","Bronx","Brooklyn"]}},
+                        {
+                        "restaurant_id" : 1,
+                        "name":1,"borough":1,
+                        "cuisine" :1
+                        }
+                     )
+    ```
 
 19. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which are not belonging to the borough Staten Island or Queens or Bronxor Brooklyn. 
 
